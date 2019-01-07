@@ -14,7 +14,6 @@ adduser jenkins
 su - jenkins
 git clone https://github.com/acefei/ace-jenkins.git
 cd ace-jenkins
-mkdir jenkins_home
 docker-compose up
 ```
 
