@@ -1,14 +1,27 @@
-version: '2'
+version: "2"
 services:
   jenkins:
-    image: acefei/jenkins-lts
+    image: acefei/ace-jenkins-master
+    container_name: jenkins
     ports:
-      - 8080:8080
-      - 50000:50000
+    - "80:8080"
+    - "50000:50000"
     environment:
-      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+    - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
     volumes:
-      - 'jenkins_data:/var/jenkins_home'
+    - jenkins-master:/var/jenkins_home
+
+  worker:
+    image: acefei/ace-jenkins-worker
+    depends_on:
+        - jenkins
+    container_name: worker
+    environment:
+      #JENKINS_MASTER: "http://jenkins:8080"
+      JENKINS_SLAVE_SSH_PUBKEY: ${JENKINS_SLAVE_SSH_PUBKEY}
+    volumes:
+    - jenkins-worker:/home/jenkins
 
 volumes:
-  jenkins_data:
+  jenkins-master:
+  jenkins-worker:
