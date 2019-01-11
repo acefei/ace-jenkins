@@ -9,5 +9,6 @@ services:
       - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
     volumes:
       - 'jenkins_data:/var/jenkins_home'
+
 volumes:
   jenkins_data:
