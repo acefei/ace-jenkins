@@ -6,8 +6,6 @@ Docker orchestration for Ace Jenkins CI
 [docker installation](https://github.com/acefei/ace-docker#installation)
 
 ### Usage
-#### Prerequisites
-
 1. Start jenkins service alone.
 ```
 $ adduser jenkins
