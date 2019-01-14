@@ -20,27 +20,21 @@ $ docker-compose up -d jenkins
 2. Get your Jenkins Slave SSH key (public key of jenkins container).
 ```
 $ docker exec -it jenkins ssh-keygen
-$ docker exec -it jenkins cat /var/jenkins_home/.ssh/id_rsa.pub
+$ echo JENKINS_SLAVE_SSH_PUBKEY=$(docker exec -it jenkins cat /var/jenkins_home/.ssh/id_rsa.pub) > .env
 ```
 
-3. Set JENKINS_SLAVE_SSH_PUBKEY in .env file with the same directory of docker-compose.yml 
+3. Getting all service start.
 ```
-$ cat .env
-JENKINS_SLAVE_SSH_PUBKEY=<output of `docker exec -it jenkins cat /var/jenkins_home/.ssh/id_rsa.pub`> 
-```
-
-4. Getting all service start.
-```
-$ docker-compose down jenkins 
+$ docker-compose down
 $ docker-compose up -d
 ```
 
-5. Check if it works or not.
+4. Check if it works or not.
 ```
 $ docker exec -it jenkins ssh jenkins@acejenkins_worker_1
 ```
 
-6. Access Jenkins at [http://localhost]()
+5. Access Jenkins at [http://localhost]()
 
 ##### Check logs
 ```
