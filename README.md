@@ -2,11 +2,11 @@
 Docker orchestration for Ace Jenkins CI 
 
 
-#### Installation
+### Installation
 [docker installation](https://github.com/acefei/ace-docker#installation)
 
-#### Usage
-##### Prerequisites
+### Usage
+#### Prerequisites
 
 1. Start jenkins service alone.
 ```
@@ -36,23 +36,23 @@ $ docker exec -it jenkins ssh jenkins@acejenkins_worker_1
 
 5. Access Jenkins at [http://localhost]()
 
-##### Check logs
+#### Check logs
 ```
 $ docker-compose logs master
 $ docker-compose logs worker
 ```
 
-##### Add more jenkins workder
+#### Add more jenkins workder
 ```
 $ docker-compose scale worker=4
 ```
 
-##### Stop services and remove volumes
+#### Stop services and remove volumes
 ```
 $ docker-compose down -v
 ```
 
-#### That's all, Have a fun!
+### That's all, Have a fun!
 
 > NOTE:
 Avoid using a bind mount from a folder on the host machine into /var/jenkins_home, as this might result in file permission issues (the user used inside the container might not have rights to the folder on the host machine). If you really need to bind mount jenkins_home, ensure that the directory on the host is accessible by the jenkins user inside the container (jenkins user - uid 1000) or use -u some_other_user parameter with docker run.
