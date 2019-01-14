@@ -15,7 +15,6 @@ services:
     image: acefei/ace-jenkins-worker
     depends_on:
         - jenkins
-    container_name: worker
     environment:
       JENKINS_SLAVE_SSH_PUBKEY: ${JENKINS_SLAVE_SSH_PUBKEY}
     volumes:

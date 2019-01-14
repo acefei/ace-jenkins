@@ -29,7 +29,7 @@ $ cat .env
 JENKINS_SLAVE_SSH_PUBKEY=<output of `docker exec -it jenkins cat /var/jenkins_home/.ssh/id_rsa.pub`> 
 ```
 
-4. Now, get all service start.
+4. Getting all service start.
 ```
 $ docker-compose down jenkins 
 $ docker-compose up -d
@@ -37,7 +37,7 @@ $ docker-compose up -d
 
 5. Check if it works or not.
 ```
-$ docker exec -it jenkins ssh jenkins@worker
+$ docker exec -it jenkins ssh jenkins@acejenkins_worker_1
 ```
 
 6. Access Jenkins at [http://localhost]()
