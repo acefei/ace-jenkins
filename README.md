@@ -15,7 +15,7 @@ $ cd ace-jenkins
 $ docker-compose up -d jenkins 
 ```
 
-2. Get your Jenkins Slave SSH key (public key of jenkins container).
+2. Set your Jenkins Slave SSH key (public key of jenkins container).
 ```
 $ docker exec -it jenkins ssh-keygen
 $ echo JENKINS_SLAVE_SSH_PUBKEY=$(docker exec -it jenkins cat /var/jenkins_home/.ssh/id_rsa.pub) > .env
