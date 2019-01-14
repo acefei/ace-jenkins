@@ -52,6 +52,17 @@ $ docker-compose scale worker=4
 $ docker-compose down -v
 ```
 
+#### Add a SSH Node on Jenkins UI
+Access http://localhost/computer/ and **New Node** with below informations:
+- **Remote root directory:** /home/jenkins
+- **Labels:** linux
+- **Launch method:** Launch agent agents via SSH
+- **Host:** acejenkins_worker_1
+- **Credentials:** jenkins(Jenkins Master SSH Key)
+- **Host Key Verification Strategy:** Non verifying Verification Strategy
+> NOTE:
+The credential **Jenkins(Jenkins Master SSH Key)** was created automatically on jenkins initialization, refer to [add_ssh_keypair_into_credential.groovy](https://github.com/acefei/ace-docker-jenkins-master/blob/master/init_scripts/add_ssh_keypair_into_credential.groovy)
+
 ### That's all, Have a fun!
 
 > NOTE:
