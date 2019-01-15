@@ -59,7 +59,8 @@ Access http://localhost/computer/ and **New Node** with below informations:
 - **Credentials:** jenkins(Jenkins Master SSH Key)
 - **Host Key Verification Strategy:** Non verifying Verification Strategy
 > NOTE:
-The credential **Jenkins(Jenkins Master SSH Key)** was created automatically on jenkins initialization, refer to [add_ssh_keypair_into_credential.groovy](https://github.com/acefei/ace-docker-jenkins-master/blob/master/init_scripts/add_ssh_keypair_into_credential.groovy)
+1. The credential **Jenkins(Jenkins Master SSH Key)** was created automatically on jenkins initialization, refer to [add_ssh_keypair_into_credential.groovy](https://github.com/acefei/ace-docker-jenkins-master/blob/master/init_scripts/add_ssh_keypair_into_credential.groovy)
+2. To be sure that **The JDK Version** meets [requirements](https://jenkins.io/doc/administration/requirements/java/) on the linux agent.
 
 ### That's all, Have a fun!
 
